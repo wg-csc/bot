@@ -1,0 +1,22 @@
+{
+  "name": "cscc-bot",
+  "version": "1.0.0",
+  "description": "A bot for CSC club",
+  "main": "main.js",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "discord.js": "^11.3.0"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "CSC Club",
+  "license": "MIT"
+}
