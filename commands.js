@@ -46,7 +46,7 @@ const commands = {
         name: 'pk',
         description: 'Get a tutorial on public key crypto',
         execute: (msg, args) => {
-            msg.reply("A tutorial has been send privately.")
+            msg.reply("A tutorial has been sent privately.")
 
             msg.author.send(
                 "Explanation of public key crypto\n" +
