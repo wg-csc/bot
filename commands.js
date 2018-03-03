@@ -13,7 +13,7 @@ const commands = {
             Object.keys(commands).forEach(command => {
                 table.addRow(command, commands[command].description)
             })
-            msg.reply(table.toString(), {
+            msg.channel.send(table.toString(), {
                 code: true
             })
         }
