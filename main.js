@@ -20,6 +20,14 @@ client.on('message', msg => {
       msg.reply("Unrecognized command. Run `.help` for help")
     }
   }
+
+  if (msg.content.includes("$wiki")) {
+    var links = msg.content.match(/\$wiki\/[A-Za-z0-9-]+/g)
+    links.forEach(link => {
+      const url = link.replace(/\$wiki/g, "https://github.com/wg-csc/wiki/wiki")
+      msg.channel.send(url)
+    })
+  }
 });
 
 client.login(config.token);
