@@ -19,7 +19,6 @@ function bob(text) {
 
 const commands = {
     help: {
-        name: 'help',
         description: 'List all commands',
         execute: (msg, args) => {
             var table = new AsciiTable()
@@ -32,7 +31,6 @@ const commands = {
         }
     },
     sha256: {
-        name: 'sha256',
         description: '',
         execute: (msg, args) => {
             const text = args.join(' ')
@@ -43,7 +41,6 @@ const commands = {
         }
     },
     pk: {
-        name: 'pk',
         description: 'Get a tutorial on public key crypto',
         execute: (msg, args) => {
             msg.reply("A tutorial has been sent privately.")
