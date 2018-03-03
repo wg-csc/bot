@@ -37,7 +37,7 @@ const commands = {
         execute: (msg, args) => {
             const text = args.join(' ')
             const hash = crypto.createHash('sha256').update(text).digest('hex');
-            msg.reply(`${hash}`, {
+            msg.reply(hash, {
                 code: true
             })
         }
