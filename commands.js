@@ -46,6 +46,12 @@ const commands = {
                 xkcd(xkcd_handler);
             }
         }
+    },
+    wiki: {
+        description: 'Get a link to the club wiki',
+        execute: (msg, args) => {
+            msg.channel.send("The club wiki is at https://github.com/wg-csc/wiki/wiki")
+        }
     }
 }
 
