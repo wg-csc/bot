@@ -6,6 +6,7 @@ const commands = require("./commands.js")
 
 var AsciiTable = require('ascii-table')
 
+var swearjar = require('swearjar');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -19,6 +20,12 @@ client.on('message', msg => {
     } else {
       msg.reply("Unrecognized command. Run `.help` for help")
     }
+  }
+
+  if (swearjar.profane(msg.content)) {
+    msg.delete()
+    const cleaned = swearjar.censor(msg.content)
+    msg.channel.send(`[from ${msg.author.username}] ${cleaned}`)
   }
 });
 
