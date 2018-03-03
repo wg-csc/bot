@@ -68,6 +68,7 @@ const commands = {
             msg.author.send(alice('')
                 .addField("received", ":unlock:")
                 .addField("operations",
+                    "Alice put the message in a box locked with Bob's lock\n\n" +
                     ":notepad_spiral: → :briefcase:\n\n" +
                     ":unlock: + :briefcase: = [ :briefcase: :lock: ]")
                 .addField("sent", "[ :briefcase: :lock: ]")
@@ -75,6 +76,7 @@ const commands = {
             msg.author.send(bob('')
                 .addField("received", "[ :briefcase: :lock: ]")
                 .addField("operations",
+                    "and Alice unlocks the lock and reads the message\n\n" +
                     "[ :briefcase: :lock: ] + :key: → :briefcase: :unlock:\n\n" +
                     ":briefcase: → :notepad_spiral:")
                 .addField("output", ":notepad_spiral:")
