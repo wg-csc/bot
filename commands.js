@@ -13,7 +13,7 @@ const commands = {
             Object.keys(commands).forEach(command => {
                 table.addRow(command, commands[command].description)
             })
-            msg.reply(table.toString(), {
+            msg.channel.send(table.toString(), {
                 code: true
             })
         }
@@ -45,6 +45,12 @@ const commands = {
             } else {
                 xkcd(xkcd_handler);
             }
+        }
+    },
+    wiki: {
+        description: 'Get a link to the club wiki',
+        execute: (msg, args) => {
+            msg.channel.send("The club wiki is at https://github.com/wg-csc/wiki/wiki")
         }
     }
 }
