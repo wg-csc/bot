@@ -52,6 +52,12 @@ const commands = {
         execute: (msg, args) => {
             msg.channel.send("The club wiki is at https://github.com/wg-csc/wiki/wiki")
         }
+    },
+    echo: {
+        description: '',
+        execute: (msg, args) => {
+            msg.channel.send(args.join(' '))
+        }
     }
 }
 
