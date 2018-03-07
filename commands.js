@@ -4,6 +4,7 @@ var AsciiTable = require('ascii-table')
 var crypto = require('crypto');
 
 var xkcd = require('xkcd');
+const octokit = require('@octokit/rest')()
 
 const commands = {
     help: {
@@ -58,7 +59,27 @@ const commands = {
         execute: (msg, args) => {
             msg.channel.send(args.join(' '))
         }
-    }
+    },
+    announce: {
+        description: '',
+        execute: (msg, args) => {
+            const link = args[0]
+            const [owner, repo, _, sha] = link.split('/').slice(3)
+            console.log(owner, repo, sha)
+            octokit.gitdata.getCommit({
+                owner,
+                repo,
+                sha
+            }).then(info => {
+                msg.channel.send(new Discord.RichEmbed()
+                    .setTitle(info.data.message)
+                    .setURL(link)
+                    .setTimestamp(new Date(info.data.committer.date))
+                    .setAuthor(info.data.author.name)
+                    .setColor(info.data.verification.verified ? 'green' : 'grey'))
+            })
+        }
+    },
 }
 
 module.exports = commands
