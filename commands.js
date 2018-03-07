@@ -63,9 +63,9 @@ const commands = {
   announce: {
     description: '',
     execute: (msg, args) => {
+      msg.delete()
       const link = args[0]
       const [owner, repo,, sha] = link.split('/').slice(3)
-      console.log(owner, repo, sha)
       octokit.gitdata.getCommit({
         owner,
         repo,
