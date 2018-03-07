@@ -76,7 +76,7 @@ const commands = {
           .setURL(link)
           .setTimestamp(new Date(info.data.committer.date))
           .setAuthor(info.data.author.name)
-          .setColor(info.data.verification.verified ? 'green' : 'grey'))
+          .setColor(info.data.verification.verified ? '#00F600' : ''))
       })
     }
   }
